@@ -29,8 +29,7 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest main.py
-
+        pytest
     - name: Check types with mypy
       run: mypy main.py
 
