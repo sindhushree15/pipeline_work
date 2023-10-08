@@ -1,6 +1,6 @@
 # pipeline_work
 
-Step1 : Create workflow either using command line or Git UI under actions option
+Step1 : Create workflow either using command line or Git UI under actions option \n
         > Provide workflow name
         > Update yaml script to run the task
         > save/commit changes
