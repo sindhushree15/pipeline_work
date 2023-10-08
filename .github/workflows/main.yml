@@ -32,5 +32,5 @@ jobs:
         pytest --cov --cov-report=xml
 
     - name: Check types with mypy
-      run: mypy src
+      run: mypy main.py
 
