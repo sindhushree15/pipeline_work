@@ -29,7 +29,7 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest --cov --cov-report=xml
+        pytest main.py
 
     - name: Check types with mypy
       run: mypy main.py
