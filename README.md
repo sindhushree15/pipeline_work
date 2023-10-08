@@ -4,7 +4,7 @@
         > Provide workflow name<br>
         > Update yaml script to run the task<br>
         > save/commit changes<br>
-<h5>Step2: Check created workflows under actions<br></h>
+<h5>Step2: Check created workflows under actions<br></h5>
         > You can see the runs under actions once workflow has setup <br>
         > Click any of the run to see the logs<br>
 <h5>Step3: Clone repo in destination loc</h5><br>
