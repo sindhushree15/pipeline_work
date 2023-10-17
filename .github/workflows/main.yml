@@ -30,4 +30,6 @@ jobs:
       run: mypy main.py
     - name: Check with black
       run: black main.py
+    - name: Run iSort
+      run: isort main.py
 
