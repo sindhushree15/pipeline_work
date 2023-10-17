@@ -2,4 +2,4 @@ pytest
 mypy
 black
 isort
-pytest-check
+pytest
