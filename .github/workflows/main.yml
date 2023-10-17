@@ -33,6 +33,5 @@ jobs:
     - name: Run iSort
       run: isort main.py
     - name: Run pytest
-      run: |
-        pipenv run pytest test.py
+      run: pytest test.py
 
