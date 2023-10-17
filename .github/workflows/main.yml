@@ -33,5 +33,5 @@ jobs:
     - name: Run iSort
       run: isort main.py
     - name: Run pytest-check
-      run: pytest-check main.py
+      run: pytest main.py
 
