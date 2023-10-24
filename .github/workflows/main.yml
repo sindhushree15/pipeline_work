@@ -36,12 +36,12 @@ jobs:
         no-deps: true
         liccheck-version: 0.6.4
     - name: Check types with mypy
-      run: mypy main.py
+      run: pipenv run mypy main.py
     - name: Check with black
-      run: black main.py
+      run: pipenv run black main.py
     - name: Run iSort
       run: isort main.py
-    - name: Run pytest
+    - name: pipenv run Run pytest
       run: |
         pipenv run pytest test.py -v
         
