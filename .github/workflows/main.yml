@@ -23,9 +23,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         python -m pip install pipenv
-        python -m pip install liccheck
+        pipenv run python -m pip install --upgrade pip
+        pipenv run python -m pip install liccheck
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Check Licenses with liccheck
       run: |
