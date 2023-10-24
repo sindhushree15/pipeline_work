@@ -7,7 +7,7 @@ on:
 jobs:
   python_ci:
 
-    runs-on: ubuntu-18.04
+    runs-on: Ubuntu 20.04
     strategy:
       fail-fast: false
       matrix:
