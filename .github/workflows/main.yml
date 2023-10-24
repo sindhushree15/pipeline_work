@@ -32,12 +32,9 @@ jobs:
       with:
         strategy-ini-file: ./liccheck.ini
         level: standard
-        requirements-txt-file: ./requirements.txt
+        requirements-txt-file: ./licensetestrequirements.txt
         no-deps: true
         liccheck-version: 0.6.4
-    - name: Check Licenses with liccheck
-      run: |
-        pipenv run liccheck -s liccheck.ini -r requirements.txt
     - name: Check types with mypy
       run: mypy main.py
     - name: Check with black
