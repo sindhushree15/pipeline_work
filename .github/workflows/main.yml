@@ -27,6 +27,9 @@ jobs:
         python -m pip install pipenv
         python -m pip install liccheck
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Check Licenses with liccheck
+      run: |
+        pipenv run liccheck requirements.txt -v
     - name: Check types with mypy
       run: mypy main.py
     - name: Check with black
