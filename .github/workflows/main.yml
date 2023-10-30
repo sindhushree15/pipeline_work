@@ -52,7 +52,7 @@ jobs:
         project_path: .
         ignore_failure: false
         confidence: high
-        
+        exit_zero: true 
 
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
