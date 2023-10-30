@@ -18,3 +18,5 @@ Checkout<br>
 Python installtion<br>
 Black<br>
 mypy<br>
+Bandit<br>
+isort<br>
