@@ -46,6 +46,7 @@ jobs:
         pipenv run pytest test.py -v
         
     - name: Security check - Bandit
+      id: SecurityCheck
       uses: ./
       with:
         python_version: ${{ matrix.python-version }}
@@ -60,10 +61,8 @@ jobs:
       with:
         name: Security report
         path: output/security_report.txt
-    - name: conclusion
-      uses: technote-space/workflow-conclusion-action@v2
-    - name: Check Job Status status and fail if they are red
-      if: env.WORKFLOW_CONCLUSION == 'failure'
+    - name: Check on failures
+      if: steps.SecurityCheck.outcome != 'success'
       run: exit 1
     
 
