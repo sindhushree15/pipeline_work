@@ -50,7 +50,9 @@ jobs:
       with:
         python_version: ${{ matrix.python-version }}
         project_path: .
-        ignore_failure: true
+        ignore_failure: false
+        confidence: high
+        
 
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
