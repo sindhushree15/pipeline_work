@@ -20,4 +20,4 @@ Black<br>
 mypy<br>
 Bandit<br>
 isort<br>
-Required status check "python_ci (3.7)" is expected
+
