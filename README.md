@@ -20,4 +20,4 @@ Black<br>
 mypy<br>
 Bandit<br>
 isort<br>
-pytest<br>
+
