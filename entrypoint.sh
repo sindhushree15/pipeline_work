@@ -1,6 +1,6 @@
 #!/bin/sh -l
 $security_level =""
-
+$security_confidence =""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
     exit 1
@@ -23,7 +23,24 @@ else
         echo "LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_level = '-lll'
     fi
-fi  
+fi 
+
+if [ -z "$INPUT_CONFIDENCE" ]; then
+    echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
+else
+    if ["$INPUT_CONFIDENCE" -eq "low"]; then
+        echo "CONFIDENCE low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_confidence = '-i'
+    elif ["$INPUT_CONFIDENCE" -eq "medium"]; then
+        echo "CONFIDENCE medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_confidence = '-ii'
+    else
+        echo "CONFIDENCE high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_confidence = '-iii'
+    fi
+fi
+ echo "🔥🔥🔥🔥🔥Level = $security_level🔥🔥🔥🔥🔥🔥"
+  echo "🔥🔥🔥🔥🔥Confidence = $security_confidence🔥🔥🔥🔥🔥🔥"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenv $INPUT_PYTHON_VERSION venv
@@ -34,7 +51,7 @@ pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
 echo "🔥🔥🔥🔥🔥$level🔥🔥🔥🔥🔥🔥"
-bandit -r $INPUT_PROJECT_PATH -lll -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
+bandit -r $INPUT_PROJECT_PATH -lll -iii -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
