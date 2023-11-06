@@ -38,8 +38,8 @@ else
         $security_confidence = "-iii"
     fi
 fi
- echo "🔥🔥🔥🔥🔥Level = $security_level🔥🔥🔥🔥🔥🔥"
-  echo "🔥🔥🔥🔥🔥Confidence = $security_confidence🔥🔥🔥🔥🔥🔥"
+ echo "🔥🔥🔥🔥🔥Level '$security_level'🔥🔥🔥🔥🔥🔥"
+  echo "🔥🔥🔥🔥🔥Confidence '$security_confidence'🔥🔥🔥🔥🔥🔥"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenv $INPUT_PYTHON_VERSION venv
