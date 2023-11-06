@@ -12,9 +12,9 @@ fi
 if [ -z "$INPUT_LEVEL" ]; then
     echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
 else
-    if [$INPUT_LEVEL] -eq "low" then
+    if ["$INPUT_LEVEL" -eq "low"]; then
         $level = '-l'
-    elif [$INPUT_LEVEL] -eq "medium" then
+    elif ["$INPUT_LEVEL" -eq "medium"]; then
         $level = '-ll'
     else
         $level = '-lll'
