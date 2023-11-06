@@ -1,5 +1,5 @@
 #!/bin/sh -l
-echo "🔥🔥🔥🔥🔥$Args[0]🔥🔥🔥🔥🔥🔥"
+write-output "$Args[0]"
 echo "🔥🔥🔥🔥🔥$Args[1]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
