@@ -1,5 +1,5 @@
 #!/bin/sh -l
-$global:$security_level = ""
+$global:$security_level = "-lll"
 $global:$security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
@@ -39,8 +39,8 @@ else
         $global:$security_confidence = "-iii"
     fi
 fi
- echo "🔥🔥🔥🔥🔥Level '$security_level'🔥🔥🔥🔥🔥🔥"
-  echo "🔥🔥🔥🔥🔥Confidence '$security_confidence'🔥🔥🔥🔥🔥🔥"
+ echo "🔥🔥🔥🔥🔥Level $global:$security_level🔥🔥🔥🔥🔥🔥"
+  echo "🔥🔥🔥🔥🔥Confidence $global:$security_confidence🔥🔥🔥🔥🔥🔥"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenv $INPUT_PYTHON_VERSION venv
