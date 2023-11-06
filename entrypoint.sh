@@ -1,5 +1,9 @@
 #!/bin/sh -l
-write-output "$Args[0]"
+# `$#` expands to the number of arguments and `$@` expands to the supplied `args`
+printf '%d args:' "$#"
+printf " '%s'" "$@"
+printf '\n'
+
 echo "🔥🔥🔥🔥🔥$Args[1]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
