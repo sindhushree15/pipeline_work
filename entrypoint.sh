@@ -1,6 +1,5 @@
 #!/bin/sh -l
-$security_level =""
-$security_confidence =""
+
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
     exit 1
@@ -14,13 +13,13 @@ if [ -z "$INPUT_LEVEL" ]; then
     echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
 else
     if ["$INPUT_LEVEL" -eq "low"]; then
-        echo "LEVEl low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If LEVEl low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_level = "-l"
     elif ["$INPUT_LEVEL" -eq "medium"]; then
-        echo "LEVEl medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If LEVEl medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_level = "-ll"
     else
-        echo "LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_level = "-lll"
     fi
 fi 
@@ -29,13 +28,13 @@ if [ -z "$INPUT_CONFIDENCE" ]; then
     echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
 else
     if ["$INPUT_CONFIDENCE" -eq "low"]; then
-        echo "CONFIDENCE low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If CONFIDENCE low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_confidence = "-i"
     elif ["$INPUT_CONFIDENCE" -eq "medium"]; then
-        echo "CONFIDENCE medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If CONFIDENCE medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_confidence = "-ii"
     else
-        echo "CONFIDENCE high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        echo "If CONFIDENCE high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         $security_confidence = "-iii"
     fi
 fi
