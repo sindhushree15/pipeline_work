@@ -1,5 +1,8 @@
 #!/bin/sh -l
-"$security_level" = "-lll"
+param (
+    [string] $security_level
+)
+$security_level = "-lll"
  echo "🔥🔥🔥🔥🔥$security_level🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
