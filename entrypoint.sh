@@ -1,9 +1,9 @@
 #!/bin/sh -l
-param (
-
-    $securitylevel
-)
-
+param(
+     [Parameter()]
+     [string]$securitylevel
+ )
+ 
 if ($null -eq $securitylevel -or "" -eq $securitylevel) {
     Write-Host "Using default for organization"
     $securitylevel = "-lll"
