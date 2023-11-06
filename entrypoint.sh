@@ -15,13 +15,13 @@ if [ -z "$INPUT_LEVEL" ]; then
 else
     if ["$INPUT_LEVEL" -eq "low"]; then
         echo "LEVEl low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_level = '-l'
+        $security_level = "-l"
     elif ["$INPUT_LEVEL" -eq "medium"]; then
         echo "LEVEl medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_level = '-ll'
+        $security_level = "-ll"
     else
         echo "LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_level = '-lll'
+        $security_level = "-lll"
     fi
 fi 
 
@@ -30,13 +30,13 @@ if [ -z "$INPUT_CONFIDENCE" ]; then
 else
     if ["$INPUT_CONFIDENCE" -eq "low"]; then
         echo "CONFIDENCE low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_confidence = '-i'
+        $security_confidence = "-i"
     elif ["$INPUT_CONFIDENCE" -eq "medium"]; then
         echo "CONFIDENCE medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_confidence = '-ii'
+        $security_confidence = "-ii"
     else
         echo "CONFIDENCE high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $security_confidence = '-iii'
+        $security_confidence = "-iii"
     fi
 fi
  echo "🔥🔥🔥🔥🔥Level = $security_level🔥🔥🔥🔥🔥🔥"
