@@ -1,6 +1,6 @@
 #!/bin/sh -l
-$level =""
-echo "LEVEl 🔥🔥🔥🔥🔥$INPUT_LEVEL🔥🔥🔥🔥🔥🔥"
+$security_level =""
+
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
     exit 1
@@ -14,11 +14,14 @@ if [ -z "$INPUT_LEVEL" ]; then
     echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
 else
     if ["$INPUT_LEVEL" -eq "low"]; then
-        $level = '-l'
+        echo "LEVEl low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_level = '-l'
     elif ["$INPUT_LEVEL" -eq "medium"]; then
-        $level = '-ll'
+        echo "LEVEl medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_level = '-ll'
     else
-        $level = '-lll'
+        echo "LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        $security_level = '-lll'
     fi
 fi  
 eval "$(pyenv init -)"
@@ -31,7 +34,7 @@ pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
 echo "🔥🔥🔥🔥🔥$level🔥🔥🔥🔥🔥🔥"
-bandit -r $INPUT_PROJECT_PATH $level -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
+bandit -r $INPUT_PROJECT_PATH $security_level -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
