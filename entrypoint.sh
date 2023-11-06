@@ -1,12 +1,12 @@
 #!/bin/sh -l
 # `$#` expands to the number of arguments and `$@` expands to the supplied `args`
-arg1=${1}
-printf arg1
+$arg1=${1}
+printf " '%s'" $arg1
 printf '%d args:' "$#"
 printf " '%s'" "$@"
 printf '\n'
 
-echo "🔥🔥🔥🔥🔥$#🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$@🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[4]🔥🔥🔥🔥🔥🔥"
