@@ -1,11 +1,13 @@
 #!/bin/sh -l
+echo "🔥🔥🔥🔥🔥$Args[0]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$Args[1]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$Args[4]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$Args[5]🔥🔥🔥🔥🔥🔥"
+$securitylevel = "-lll"
+echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥" 
 
-if ($null -eq $securitylevel -or "" -eq $securitylevel) {
-    Write-Host "Using default for organization"
-    $securitylevel = "-lll"
-}
- 
-echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
