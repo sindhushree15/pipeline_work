@@ -1,7 +1,7 @@
 #!/bin/sh -l
 # `$#` expands to the number of arguments and `$@` expands to the supplied `args`
-$securitylevel= 'sindhu'
-$TEMP = "Hello"
+pyenv $securitylevel= 'sindhu'
+pyenv $TEMP = "Hello"
 printf '%d args:' "$#"
 printf " '%s'" "$@"
 printf '\n'
