@@ -17,6 +17,14 @@ inputs:
     description: "This is to ignore the security failures and pass the check."
     required: false
     default: false
+  level:
+    description: "Report only issues of a given severity level or higher. Can be LOW, MEDIUM or HIGH"
+    required: false
+    default: "UNDEFINED"
+  confidence:
+    description: "Report only issues of a given confidence level or higher. Can be LOW, MEDIUM or HIGH"
+    required: false
+    default: "UNDEFINED"
 
 runs:
   using: "docker"
