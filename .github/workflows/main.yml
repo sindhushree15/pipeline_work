@@ -52,6 +52,7 @@ jobs:
         python_version: ${{ matrix.python-version }}
         project_path: .
         ignore_failure: false
+        level: high
         confidence: high
         exit_zero: true 
 
