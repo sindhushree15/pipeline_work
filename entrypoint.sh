@@ -14,7 +14,7 @@ if [ -z "$INPUT_LEVEL" ]; then
 else
     if [$INPUT_LEVEL] -eq "low" then
         $level = '-l'
-    else if [$INPUT_LEVEL] -eq "medium" then
+    elseif [$INPUT_LEVEL] -eq "medium" then
         $level = '-ll'
     else
         $level = '-lll'
