@@ -1,7 +1,5 @@
 #!/bin/sh -l
-param (
-    [string] $security_level
-)
+param ([string] $security_level)
 $security_level = "-lll"
  echo "🔥🔥🔥🔥🔥$security_level🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
