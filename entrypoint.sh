@@ -8,10 +8,10 @@ printf " '%s'" "$@"
 printf '\n'
 
 echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$Args[4]🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$Args[5]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥"$args[2]"🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$args[3]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$args[4]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$args[5]🔥🔥🔥🔥🔥🔥"
 $securitylevel = "-lll"
 echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥" 
 
