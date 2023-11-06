@@ -5,7 +5,7 @@ printf " '%s'" $arg1
 printf '%d args:' "$#"
 printf " '%s'" "$@"
 printf '\n'
-
+$@ = "-lll"
 echo "🔥🔥🔥🔥🔥$@🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
