@@ -1,6 +1,6 @@
 #!/bin/sh -l
 # `$#` expands to the number of arguments and `$@` expands to the supplied `args`
-$securitylevel="sindhu"
+$securitylevel= 'sindhu'
 
 printf " '%s'" $arg1
 printf '%d args:' "$#"
