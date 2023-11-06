@@ -1,6 +1,12 @@
 #!/bin/sh -l
-param ([string] $securitylevel)
-$securitylevel = "-lll"
+param (
+    [string] $securitylevel
+)
+
+if ($null -eq $securitylevel -or "" -eq $securitylevel) {
+    Write-Host "Using default for organization"
+    $securitylevel = "-lll"
+}
  echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
