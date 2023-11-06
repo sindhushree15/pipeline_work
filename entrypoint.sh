@@ -29,6 +29,7 @@ echo "🔥🔥🔥🔥🔥Running security check🔥🔥🔥🔥🔥🔥"
 pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
+echo "🔥🔥🔥🔥🔥$level🔥🔥🔥🔥🔥🔥"
 bandit -r $INPUT_PROJECT_PATH $level -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 
 if [ $? -eq 0 ]; then
