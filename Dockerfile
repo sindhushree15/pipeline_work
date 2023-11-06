@@ -11,5 +11,5 @@ ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh securitylevel
+RUN chmod +x /entrypoint.sh $securitylevel
 ENTRYPOINT ["/entrypoint.sh"]
