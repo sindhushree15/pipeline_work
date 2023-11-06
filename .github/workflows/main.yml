@@ -51,6 +51,7 @@ jobs:
       with:
         python_version: ${{ matrix.python-version }}
         project_path: .
+        level: high
         confidence: high
 
     - name: Security check report artifacts
