@@ -1,6 +1,6 @@
 #!/bin/sh -l
 param (
-    [string] $securitylevel
+    [string] $securitylevel,
 )
 
 if ($null -eq $securitylevel -or "" -eq $securitylevel) {
