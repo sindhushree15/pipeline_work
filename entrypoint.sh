@@ -1,7 +1,7 @@
 #!/bin/sh -l
-param ([string] $security_level)
-$security_level = "-lll"
- echo "🔥🔥🔥🔥🔥$security_level🔥🔥🔥🔥🔥🔥"
+param ([string] $securitylevel)
+$securitylevel = "-lll"
+ echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
