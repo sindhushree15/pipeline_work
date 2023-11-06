@@ -1,19 +1,13 @@
 #!/bin/sh -l
 # `$#` expands to the number of arguments and `$@` expands to the supplied `args`
 $securitylevel= 'sindhu'
-
-printf " '%s'" $arg1
+$TEMP = "Hello"
 printf '%d args:' "$#"
 printf " '%s'" "$@"
 printf '\n'
 
 echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥"$args[2]"🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$args[3]🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$args[4]🔥🔥🔥🔥🔥🔥"
-echo "🔥🔥🔥🔥🔥$args[5]🔥🔥🔥🔥🔥🔥"
-$securitylevel = "-lll"
-echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥" 
+echo "🔥🔥🔥🔥🔥$TEMP🔥🔥🔥🔥🔥🔥"
 
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
