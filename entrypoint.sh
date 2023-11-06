@@ -4,7 +4,7 @@ printf '%d args:' "$#"
 printf " '%s'" "$@"
 printf '\n'
 
-echo "🔥🔥🔥🔥🔥$Args[1]🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥$#🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[2]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[3]🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥$Args[4]🔥🔥🔥🔥🔥🔥"
