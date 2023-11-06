@@ -1,5 +1,5 @@
 #!/bin/sh -l
-$global:security_level = "-lll"
+$security_level = "-lll"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
@@ -15,13 +15,13 @@ if [ -z "$INPUT_LEVEL" ]; then
 else
     if ["$INPUT_LEVEL" -eq "low"]; then
         echo "If LEVEl low🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $global:security_level = "-l"
+        $security_level = "-l"
     elif ["$INPUT_LEVEL" -eq "medium"]; then
         echo "If LEVEl medium🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $global:security_level = "-ll"
+        $security_level = "-ll"
     else
         echo "If LEVEl high🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-        $global:security_level = "-lll"
+        $security_level = "-lll"
     fi
 fi 
 
@@ -39,9 +39,9 @@ else
         $global:security_confidence = "-iii"
     fi
 fi
-Write-Host $global:security_level
+Write-Host $security_level
 Write-Host $global:security_confidence
-echo "🔥🔥🔥🔥🔥Level $global:security_level🔥🔥🔥🔥🔥🔥"
+echo "🔥🔥🔥🔥🔥Level $security_level🔥🔥🔥🔥🔥🔥"
 echo "🔥🔥🔥🔥🔥Confidence $global:security_confidence🔥🔥🔥🔥🔥🔥"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
