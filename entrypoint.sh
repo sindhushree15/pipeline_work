@@ -1,6 +1,7 @@
 #!/bin/sh -l
 # `$#` expands to the number of arguments and `$@` expands to the supplied `args`
-$arg1=${1}
+$arg1="$@"
+$arg1="-lll"
 printf " '%s'" $arg1
 printf '%d args:' "$#"
 printf " '%s'" "$@"
