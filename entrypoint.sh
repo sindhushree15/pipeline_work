@@ -1,5 +1,5 @@
 #!/bin/sh -l
-
+$level =""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
     exit 1
@@ -8,7 +8,16 @@ else
     pyenv global $INPUT_PYTHON_VERSION
     pyenv rehash
 fi
-
+if [ -z "$INPUT_LEVEL" ]; then
+    echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
+else
+    if [$INPUT_LEVEL] -eq "low"
+        $level = '-l'
+    else if [$INPUT_LEVEL] -eq "medium"
+        $level = '-ll'
+    else
+        $level = '-lll'
+    
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenv $INPUT_PYTHON_VERSION venv
@@ -18,7 +27,7 @@ echo "🔥🔥🔥🔥🔥Running security check🔥🔥🔥🔥🔥🔥"
 pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
-bandit -r $INPUT_PROJECT_PATH -lll -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
+bandit -r $INPUT_PROJECT_PATH $level -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
