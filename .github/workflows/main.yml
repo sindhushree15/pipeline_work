@@ -44,14 +44,13 @@ jobs:
     - name: pipenv run Run pytest
       run: |
         pipenv run pytest test.py -v
-        
+    
     - name: Security check - Bandit
       id: SecurityCheck
       uses: ./
       with:
         python_version: ${{ matrix.python-version }}
         project_path: .
-        level: high
         confidence: high
         exit_zero: true 
 
