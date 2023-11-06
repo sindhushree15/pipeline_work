@@ -7,7 +7,8 @@ if ($null -eq $securitylevel -or "" -eq $securitylevel) {
     Write-Host "Using default for organization"
     $securitylevel = "-lll"
 }
- echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
+ 
+echo "🔥🔥🔥🔥🔥$securitylevel🔥🔥🔥🔥🔥🔥"
 $global:security_confidence = ""
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
