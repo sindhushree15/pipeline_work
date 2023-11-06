@@ -8,16 +8,18 @@ else
     pyenv global $INPUT_PYTHON_VERSION
     pyenv rehash
 fi
+
 if [ -z "$INPUT_LEVEL" ]; then
     echo "🔥🔥🔥🔥🔥No level provided🔥🔥🔥🔥🔥🔥"
 else
-    if [$INPUT_LEVEL] -eq "low"
+    if [$INPUT_LEVEL] -eq "low" then
         $level = '-l'
-    else if [$INPUT_LEVEL] -eq "medium"
+    else if [$INPUT_LEVEL] -eq "medium" then
         $level = '-ll'
     else
         $level = '-lll'
-    
+    fi
+fi  
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenv $INPUT_PYTHON_VERSION venv
