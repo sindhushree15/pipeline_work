@@ -1,5 +1,6 @@
 #!/bin/sh -l
 $level =""
+echo "LEVEl 🔥🔥🔥🔥🔥$INPUT_LEVEL🔥🔥🔥🔥🔥🔥"
 if [ -z "$INPUT_PYTHON_VERSION" ]; then
     echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
     exit 1
