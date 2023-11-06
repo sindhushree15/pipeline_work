@@ -20,11 +20,11 @@ inputs:
   level:
     description: "Report only issues of a given severity level or higher. Can be LOW, MEDIUM or HIGH"
     required: false
-    default: "UNDEFINED"
+    default: ""
   confidence:
     description: "Report only issues of a given confidence level or higher. Can be LOW, MEDIUM or HIGH"
     required: false
-    default: "UNDEFINED"
+    default: ""
 
 runs:
   using: "docker"
