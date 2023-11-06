@@ -52,7 +52,6 @@ jobs:
         python_version: ${{ matrix.python-version }}
         project_path: .
         confidence: high
-        exit_zero: true 
 
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
