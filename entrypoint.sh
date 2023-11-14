@@ -61,14 +61,15 @@ touch $GITHUB_WORKSPACE/output/security_report.txt
 
 #bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f json 
-
+value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
+echo "$value"
+echo "::set-output name=securitcheck_result::$value"
+echo $securitcheck_result
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
-    value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
     echo "$value"
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"   
-    value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
     echo "$value"
     if $INPUT_IGNORE_FAILURE; then
         exit 0
