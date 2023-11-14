@@ -60,13 +60,14 @@ mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
 
 #bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
-bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f json >> $GITHUB_OUTPUT
+bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f json 
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
+    echo $GITHUB_WORKSPACE/output/security_report.txt >> $GITHUB_OUTPUT
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
-    cat $GITHUB_WORKSPACE/output/security_report.txt
+    cat $GITHUB_WORKSPACE/output/security_report.txt >> $GITHUB_OUTPUT
     if $INPUT_IGNORE_FAILURE; then
         exit 0
     else
