@@ -27,7 +27,7 @@ jobs:
       with:
         python_version: ${{ matrix.python-version }}
         project_path: .
-        level: -lll
+        level: -ll
         confidence: -iii
         
     - name: Check on level and confidence
