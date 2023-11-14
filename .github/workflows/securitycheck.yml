@@ -29,7 +29,10 @@ jobs:
         project_path: .
         level: -lll
         confidence: -iii
-
+        
+    - name: Check on level and confidence
+      run: echo ${{ steps.SecurityCheck.outputs }}    
+      
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
       # if: failure()
