@@ -64,8 +64,8 @@ bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPAC
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
-    $GITHUB_OUTPUT=`cat $GITHUB_WORKSPACE/output/security_report.txt`
-    echo "$GITHUB_OUTPUT"
+    value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
+    echo "$value"
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
     cat $GITHUB_WORKSPACE/output/security_report.txt >> $GITHUB_OUTPUT
