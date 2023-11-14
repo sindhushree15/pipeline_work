@@ -64,7 +64,7 @@ bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPAC
 value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
 #echo "$value"
 echo "::set-output name=securitcheck_result::$value"
-#echo "{securitcheck_result}={$value}" >> $GITHUB_OUTPUT
+echo "{securitcheck_result}={$value}" >> "$GITHUB_OUTPUT"
 echo $securitcheck_result
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
