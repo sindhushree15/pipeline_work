@@ -67,8 +67,9 @@ if [ $? -eq 0 ]; then
     value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
     echo "$value"
 else
-    echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
-    cat $GITHUB_WORKSPACE/output/security_report.txt >> $GITHUB_OUTPUT
+    echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"   
+    value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
+    echo "$value"
     if $INPUT_IGNORE_FAILURE; then
         exit 0
     else
