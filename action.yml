@@ -25,7 +25,11 @@ inputs:
     description: "Report only issues of a given confidence level or higher. Can be LOW, MEDIUM or HIGH"
     required: false
     default: ""
-
+  output:
+    description: ''
+outputs:
+  output:
+    description: 'The output of bandit'
 runs:
   using: "docker"
   image: "Dockerfile"
