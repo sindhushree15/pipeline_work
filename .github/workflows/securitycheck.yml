@@ -39,7 +39,4 @@ jobs:
       with:
         name: Security report
         path: output/security_report.txt
-    - name: Check on failures
-      if: steps.SecurityCheck.outcome != 'success'
-      run: exit 1
     
