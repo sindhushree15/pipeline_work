@@ -31,7 +31,7 @@ jobs:
         confidence: -iii
         
     - name: Check on level and confidence
-      run: echo ${{ steps.SecurityCheck }}    
+      run: echo ${{ steps.SecurityCheck.outcome }}    
       
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
