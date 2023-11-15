@@ -31,16 +31,7 @@ jobs:
         confidence: -iii
         
     - name: Check on level and confidence
-      run: echo ${{ steps.SecurityCheck.outputs.output }}    
-    - name: Show default environment variables
-      run: |
-          echo "The job_id is: $GITHUB_JOB"   # reference the default environment variables
-          echo "The id of this action is: $GITHUB_ACTION"   # reference the default environment variables
-          echo "The run id is: $GITHUB_RUN_ID"
-          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
-          echo "GitHub SHA: $GITHUB_SHA"
-          echo "GITHUB_OUTPUT: $GITHUB_OUTPUT"
-          echo "securitcheck_result: $securitcheck_result"
+      run: echo ${{ steps.SecurityCheck.outputs }}    
       
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
