@@ -41,10 +41,12 @@ jobs:
       run: |
         if [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.MEDIUM']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 ]
         then
-          echo "SEVERITY.MEDIUM && CONFIDENCE.HIGH met"
+          echo "if 1st"
           exit 1
+        elif [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.HIGH']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 ]
+          echo "if second"
         else
-          echo "a is not equal to b"
+          echo "if 3rd"
         fi
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
