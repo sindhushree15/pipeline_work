@@ -34,9 +34,6 @@ jobs:
       run: echo '${{ steps.SecurityCheck.outputs.output }}'
     - name : parse json
       run: echo "${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}"
-    - name: Check on failures
-      if: ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} == 0
-      run: echo "condition met"
     - name : check security condition 
       run: |
         if [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.MEDIUM']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 ]
