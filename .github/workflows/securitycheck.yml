@@ -37,7 +37,7 @@ jobs:
     - name : check security condition 
       run: |
         if [[${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} == 3]]; then
-          echo "Value is 3"
+          exit 1
         else
           echo "There is no github tag reference, skipping"
         fi
