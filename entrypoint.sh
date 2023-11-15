@@ -65,7 +65,13 @@ value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
 
 echo "::set-output name=securitcheck_result::$value"
 #echo "time=$time" >> $GITHUB_OUTPUT
-echo "output=$value" >> $GITHUB_OUTPUT
+
+EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+echo "output<<$EOF" >> $GITHUB_OUTPUT
+echo "$value" >> $GITHUB_OUTPUT
+echo "$EOF" >> $GITHUB_OUTPUT
+
+#echo "output=$value" >> $GITHUB_OUTPUT
 echo "Before Git output"
 echo $GITHUB_OUTPUT
 if [ $? -eq 0 ]; then
