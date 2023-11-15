@@ -37,8 +37,7 @@ jobs:
     - name : check security condition 
       run: |
         n=3
-        if $n == 3
-        then
+        if ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} -eq 3] == 'true';then
           echo "Condition match!!"
         else
           echo "Condition didn't match!!"
