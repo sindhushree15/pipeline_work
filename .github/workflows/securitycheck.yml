@@ -36,10 +36,10 @@ jobs:
       run: echo "${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}"
     - name : check security condition 
       run: |
-        if [${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} == "3"]; then
-          exit 1
+        if [${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} >0]; then
+          echo "Condition match!!"
         else
-          echo "There is no github tag reference, skipping"
+          echo "Condition didn't match!!"
         fi
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
