@@ -36,7 +36,7 @@ jobs:
       run: echo "${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}"
     - name : check security condition 
       run: |
-        if [${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} eq 3]; then
+        if [${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} -eq 3]; then
           echo "Condition match!!"
         else
           echo "Condition didn't match!!"
