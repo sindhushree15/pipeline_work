@@ -40,7 +40,7 @@ jobs:
     - name : check security condition 
       run: |
         a=20
-        b=20
+        b=22
   
         if [ $a == $b ]
         then
