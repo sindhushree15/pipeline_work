@@ -57,11 +57,11 @@ pyenv activate venv
 echo "🔥🔥🔥🔥🔥Running security check🔥🔥🔥🔥🔥🔥"
 pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
-touch $GITHUB_WORKSPACE/output/security_report.txt
+touch $GITHUB_WORKSPACE/output/security_report.json
 
 
-bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f json 
-value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
+bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.json -f json 
+value=`cat $GITHUB_WORKSPACE/output/security_report.json`
 
 echo "::set-output name=securitcheck_result::$value"
 #echo "time=$time" >> $GITHUB_OUTPUT
