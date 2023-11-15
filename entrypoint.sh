@@ -59,19 +59,21 @@ pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
 
-#bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
+
 bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.txt -f json 
 value=`cat $GITHUB_WORKSPACE/output/security_report.txt`
-#echo "$value"
+
 echo "::set-output name=securitcheck_result::$value"
-#echo "{securitcheck_result}={$value}" >> "$GITHUB_OUTPUT"
+
 echo "$securitcheck_result" >> $GITHUB_OUTPUT
+echo "Before Git output"
+echo $GITHUB_OUTPUT
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
-    echo "$value"
+    #echo "$value"
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"   
-    echo "$value"
+    #echo "$value"
     if $INPUT_IGNORE_FAILURE; then
         exit 0
     else
