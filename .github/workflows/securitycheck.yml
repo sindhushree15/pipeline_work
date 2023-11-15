@@ -43,7 +43,7 @@ jobs:
         echo $a
         b=22
   
-        if [ $a == 20 ]
+        if [ $a == 3 ]
         then
           echo "a is equal to b"
         else
