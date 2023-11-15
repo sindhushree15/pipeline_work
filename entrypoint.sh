@@ -62,7 +62,11 @@ touch $GITHUB_WORKSPACE/output/security_report.json
 
 bandit -r $INPUT_PROJECT_PATH $INPUT_LEVEL $INPUT_CONFIDENCE -o $GITHUB_WORKSPACE/output/security_report.json -f json 
 value=`cat $GITHUB_WORKSPACE/output/security_report.json`
-
+find="CONFIDENCE.HIGH"
+replace="CONFIDENCE_HIGH"
+result=${value//$find/$replace}
+echo "Replaced values"
+echo $result
 echo "::set-output name=securitcheck_result::$value"
 #echo "time=$time" >> $GITHUB_OUTPUT
 
