@@ -31,7 +31,7 @@ jobs:
         confidence: -iii
         
     - name: Check on level and confidence
-      run: echo ${{ steps.SecurityCheck.outputs }}    
+      run: echo ${{ steps.SecurityCheck.outputs.output }}    
     - name: Show default environment variables
       run: |
           echo "The job_id is: $GITHUB_JOB"   # reference the default environment variables
