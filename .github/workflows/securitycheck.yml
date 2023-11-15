@@ -30,8 +30,8 @@ jobs:
         level: -lll
         confidence: -iii
         
-    #- name: Check on level and confidence
-      #run: echo ${{ steps.SecurityCheck.outputs.output }}  
+    - name: Check on level and confidence
+      run: echo ${{ steps.SecurityCheck.outputs.output.metrics._totals }}  
     - name : parse json
       run: echo '${{ fromJson(steps.SecurityCheck.outputs.output).metrics }}'
       
