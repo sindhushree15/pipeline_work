@@ -31,9 +31,9 @@ jobs:
         confidence: -iii
         
     - name: Check on level and confidence
-      run: echo ${{ steps.SecurityCheck.output }}  
+      run: echo '${{ steps.SecurityCheck.outputs.output }}'
     - name : parse json
-      run: echo '${{ fromJson(steps.SecurityCheck.outputs) }}'
+      run: echo '${{ fromJson(steps.SecurityCheck.outputs.output) }}'
       
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
