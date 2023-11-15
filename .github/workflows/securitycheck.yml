@@ -37,7 +37,10 @@ jobs:
     - name : check security condition 
       run: |
         if [["${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}" == 3]]; then
-        echo "Value is 3"
+          echo "Value is 3"
+        else
+          echo "There is no github tag reference, skipping"
+        fi
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
       # if: failure()
