@@ -39,7 +39,8 @@ jobs:
       run: echo "condition met"
     - name : check security condition 
       run: |
-        a=20
+        a=${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}
+        echo $a
         b=22
   
         if [ $a == 20 ]
