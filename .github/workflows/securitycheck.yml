@@ -42,7 +42,7 @@ jobs:
         a=20
         b=22
   
-        if [ $a == $b ]
+        if [ $a == 20 ]
         then
           echo "a is equal to b"
         else
