@@ -31,7 +31,7 @@ jobs:
         confidence: -iii
         
     - name: Check on level and confidence
-      run: echo ${{ steps.SecurityCheck.outputs.output.metrics._totals }}  
+      run: echo ${{ steps.SecurityCheck.outputs.output }}  
     - name : parse json
       run: echo '${{ fromJson(steps.SecurityCheck.outputs.output).metrics }}'
       
