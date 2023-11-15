@@ -36,11 +36,12 @@ jobs:
       run: echo "${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}"
     - name : check security condition 
       run: |
-        n=3
-        if $n -eq 3; then
-          echo "Condition match!!"
+        if [3 -eq 3]; then
+            echo "If 1st🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+        elif ["${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}}" -eq "3"]; then
+            echo "If 2nd🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         else
-          echo "Condition didn't match!!"
+            echo "If fails🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
         fi
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
