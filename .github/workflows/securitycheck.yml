@@ -43,7 +43,7 @@ jobs:
         echo $a
         b=22
   
-        if [ $a == 3 ]
+        if [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} == 3 ]
         then
           echo "a is equal to b"
         else
