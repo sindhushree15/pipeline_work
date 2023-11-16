@@ -38,13 +38,14 @@ jobs:
       run: |
         if [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.MEDIUM']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 ]
         then
-          echo "if 1st"
+          echo "Found issues with Severity Medium and Confidence High!. Stopping the pipeline!!!"
           exit 1
         elif [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.HIGH']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 ]  || [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.MEDIUM']}} != 0 ]
         then 
-          echo "if second"
+          echo "Found issues with Severity Medium and Confidence High or Medium!. Stopping the pipeline!!!"
+          exit 1
         else
-          echo "if 3rd"
+          echo "No major security issues found."
         fi
     - name: Security check report artifacts
       uses: actions/upload-artifact@v1
