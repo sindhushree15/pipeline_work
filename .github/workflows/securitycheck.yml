@@ -40,7 +40,7 @@ jobs:
         then
           echo "if 1st"
           exit 1
-        elif [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.HIGH']}} != 0 ] && [[ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0] || [${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.MEDIUM']]}} != 0 ]
+        elif [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['SEVERITY.HIGH']}} != 0 ] && [ ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.HIGH']}} != 0 || ${{fromJson(steps.SecurityCheck.outputs.output)['metrics']['_totals']['CONFIDENCE.MEDIUM']}} != 0 ]
         then 
           echo "if second"
         else
